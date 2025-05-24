@@ -101,7 +101,7 @@ import {
                   <a href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
-                        Features
+                      Converter
                       </Box>
                       <IconChevronDown size={16} color={theme.colors.blue[6]} />
                     </Center>
@@ -138,16 +138,16 @@ import {
                 </HoverCard.Dropdown>
               </HoverCard>
               <a href="#" className={classes.link}>
-                Learn
+              Api
               </a>
               <a href="#" className={classes.link}>
-                Academy
+               Help
               </a>
             </Group>
   
             <Group visibleFrom="sm">
-              <Button variant="default">Log in</Button>
-              <Button>Sign up</Button>
+              <Button variant=" "  >Log in</Button>
+              <Button  >Sign up</Button>
             </Group>
   
             <Burger opened={drawerOpened} onClick={toggleDrawer} hiddenFrom="sm" />
