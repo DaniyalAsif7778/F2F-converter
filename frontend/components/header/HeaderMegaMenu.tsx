@@ -1,4 +1,5 @@
 "use client"
+import Link from 'next/link';
 import {
     IconBook,
     IconChartPie3,
@@ -87,25 +88,25 @@ import {
     ));
   
     return (
-      <Box pb={120}>
-        <header className={classes.header}>
+      <Box pb={30}>
+        <header className={`${classes.header} ${classes.padding}`}>
           <Group justify="space-between" h="100%">
             <MantineLogo size={30} />
   
             <Group h="100%" gap={0} visibleFrom="sm">
-              <a href="#" className={classes.link}>
+              <Link href="/" className={classes.link}>
                 Home
-              </a>
+              </Link>
               <HoverCard width={600} position="bottom" radius="md" shadow="md" withinPortal>
                 <HoverCard.Target>
-                  <a href="#" className={classes.link}>
+                  <Link href="#" className={classes.link}>
                     <Center inline>
                       <Box component="span" mr={5}>
                       Converter
                       </Box>
                       <IconChevronDown size={16} color={theme.colors.blue[6]} />
                     </Center>
-                  </a>
+                  </Link>
                 </HoverCard.Target>
   
                 <HoverCard.Dropdown style={{ overflow: 'hidden' }}>
@@ -137,16 +138,16 @@ import {
                   </div>
                 </HoverCard.Dropdown>
               </HoverCard>
-              <a href="#" className={classes.link}>
+              <Link href="api" className={classes.link}>
               Api
-              </a>
-              <a href="#" className={classes.link}>
+              </Link>
+              <Link href="#" className={classes.link}>
                Help
-              </a>
+              </Link>
             </Group>
   
             <Group visibleFrom="sm">
-              <Button variant=" "  >Log in</Button>
+              <Button variant=""   >Log in</Button>
               <Button  >Sign up</Button>
             </Group>
   
@@ -166,9 +167,9 @@ import {
           <ScrollArea h="calc(100vh - 80px" mx="-md">
             <Divider my="sm" />
   
-            <a href="#" className={classes.link}>
+            <Link href="#" className={classes.link}>
               Home
-            </a>
+            </Link>
             <UnstyledButton className={classes.link} onClick={toggleLinks}>
               <Center inline>
                 <Box component="span" mr={5}>
@@ -178,9 +179,9 @@ import {
               </Center>
             </UnstyledButton>
             <Collapse in={linksOpened}>{links}</Collapse>
-            <a href="#" className={classes.link}>
+            <Link href="#" className={classes.link}>
               Learn
-            </a>
+            </Link>
             <a href="#" className={classes.link}>
               Academy
             </a>

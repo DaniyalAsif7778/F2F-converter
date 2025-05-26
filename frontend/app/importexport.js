@@ -1,3 +1,5 @@
 import { HeaderMegaMenu } from "../components/header/HeaderMegaMenu";
-
-export {HeaderMegaMenu};
+ import { FooterSimple } from "@/components/footer/FooterSimple";
+ import Converter from "@/components/HomeComponent/Converter";
+ 
+ export {HeaderMegaMenu , FooterSimple,Converter};
