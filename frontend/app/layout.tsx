@@ -28,12 +28,15 @@ export default function RootLayout({
     <html lang="en">
     <head lang="en" {...mantineHtmlProps}></head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}  style={{overflowX:"hidden"}}
       >
       <MantineProvider>
-        <HeaderMegaMenu />
-          <main> {children}</main>
-        <FooterSimple />
+          <HeaderMegaMenu /> 
+    
+          <main  > {children}</main>
+            <FooterSimple /> 
+      
         </MantineProvider>
       </body>
     </html>
