@@ -7,6 +7,7 @@ import {
     IconCode,
     IconCoin,
     IconFingerprint,
+    IconFolderFilled,
     IconNotification,
   } from '@tabler/icons-react';
   import {
@@ -28,9 +29,7 @@ import {
     useMantineTheme,
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
- 
-  import classes from './HeaderMegaMenu.module.css';
-  
+   import classes from './HeaderMegaMenu.module.css';
   const mockdata = [
     {
       icon: IconCode,
@@ -91,7 +90,7 @@ import {
       <Box pb={30}>
         <header className={`${classes.header} ${classes.padding}`}>
           <Group justify="space-between" h="100%">
-       
+          <IconFolderFilled className='text-theme' stroke={2} />
   
             <Group h="100%" gap={0} visibleFrom="sm">
               <Link href="/" className={classes.link}>
@@ -188,9 +187,10 @@ import {
   
             <Divider my="sm" />
   
-            <Group justify="center" grow pb="xl" px="md">
-              <Button variant="default">Log in</Button>
-              <Button>Sign up</Button>
+            <Group justify="center" grow pb="xl" px="md" >
+            <Button className={classes.buttonTheme}>Log in</Button>
+<Button color="green">Sign up</Button>
+
             </Group>
           </ScrollArea>
         </Drawer>
