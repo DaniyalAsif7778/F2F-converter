@@ -5,6 +5,7 @@
   --background: #ffffff;
   --foreground: #171717;
   --theme: #FB2C36;
+  --Font:Open Sans;
 }
 
 @theme inline {
@@ -13,6 +14,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --color-theme: var(--theme);
+  --font-custom:var(--Font);
 
 }
 

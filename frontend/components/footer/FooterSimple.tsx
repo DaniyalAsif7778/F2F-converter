@@ -1,9 +1,10 @@
-"use client";
-import { Anchor, Container, Group } from '@mantine/core';
-import { MantineLogo } from '@mantinex/mantine-logo';
-import classes from './FooterSimple.module.css';
+"use client";   import headerIcon from "../../public/headericon.svg";
 
-const links = [
+import { Anchor, Container, Group } from '@mantine/core';
+ import classes from './FooterSimple.module.css';
+ import Image from 'next/image';
+
+ const links = [
   { link: '#', label: 'Contact' },
   { link: '#', label: 'Privacy' },
   { link: '#', label: 'Blog' },
@@ -26,7 +27,7 @@ export function FooterSimple() {
   return (
     <div className={classes.footer}>
       <Container className={classes.inner}>
-        <MantineLogo size={28} />
+      <div className='flex  items-center justify-center'> <Image src={headerIcon} width="30" height="30" alt="logo"></Image><h1>F2F-Converter</h1></div>
         <Group className={classes.links}>{items}</Group>
       </Container>
     </div>

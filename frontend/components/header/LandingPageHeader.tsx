@@ -7,8 +7,7 @@ import {
     IconCode,
     IconCoin,
     IconFingerprint,
-    IconFolderFilled,
-    IconNotification,
+     IconNotification,
   } from '@tabler/icons-react';
   import {
     Anchor,
@@ -30,6 +29,8 @@ import {
   } from '@mantine/core';
   import { useDisclosure } from '@mantine/hooks';
    import classes from './HeaderMegaMenu.module.css';
+   import Image from 'next/image';
+   import headerIcon from "../../public/headericon.svg";
   const mockdata = [
     {
       icon: IconCode,
@@ -90,8 +91,9 @@ import {
       <Box pb={30}>
         <header className={`${classes.header} ${classes.padding}`}>
           <Group justify="space-between" h="100%">
-          <IconFolderFilled className='text-theme' stroke={2} />
-  
+            <div className='flex  items-center justify-center'> <Image src={headerIcon} width="30" height="30" alt="logo"></Image><h1>F2F-Converter</h1></div>
+                
+
             <Group h="100%" gap={0} visibleFrom="sm">
               <Link href="/" className={classes.link}>
                 Home
