@@ -1,4 +1,5 @@
 "use client";
+
 import {
   Box,
   Burger,
@@ -16,57 +17,32 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import {
-  IconBook,
-  IconChartPie3,
-  IconChevronDown,
-  IconCode,
-  IconCoin,
-  IconFingerprint,
-  IconNotification,
-} from "@tabler/icons-react";
 import { MantineLogo } from "@mantinex/mantine-logo";
 import classes from "./Header.module.css";
 import Login from "../Login/Login";
 import Link from "next/link";
 
-const mockdata = [
-  {
-    icon: IconCode,
-    title: "Open source",
-    description: "This Pokémon’s cry is very loud and distracting",
-    link: "/open-source",
-  },
-  {
-    icon: IconCoin,
-    title: "Free for everyone",
-    description: "The fluid of Smeargle’s tail secretions changes",
-    link: "/free",
-  },
-  {
-    icon: IconBook,
-    title: "Documentation",
-    description: "Yanma is capable of seeing 360 degrees without",
-    link: "/docs",
-  },
-  {
-    icon: IconFingerprint,
-    title: "Security",
-    description: "The shell’s rounded shape and the grooves on its.",
-    link: "/security",
-  },
-  {
-    icon: IconChartPie3,
-    title: "Analytics",
-    description: "This Pokémon uses its flying ability to quickly chase",
-    link: "/analytics",
-  },
-  {
-    icon: IconNotification,
-    title: "Notifications",
-    description: "Combusken battles with the intensely hot flames it spews",
-    link: "/notifications",
-  },
+import {
+  IconDeviceAudioTape,   // Audio
+  IconVideo,             // Video
+  IconPhoto,             // Image
+  IconFileDescription,   // Document
+  IconArchive,           // Archive/Zip
+  IconPresentation,      // Presentation
+  IconTypography,        // Font
+  IconBook,              // Ebook
+  IconChevronDown,       // ↓ this is the missing one
+} from "@tabler/icons-react";
+
+export const mockdata = [
+  { icon: IconDeviceAudioTape, title: "Audio Converter", link: "/audio" },
+  { icon: IconVideo, title: "Video Converter", link: "/video" },
+  { icon: IconPhoto, title: "Image Converter", link: "/image" },
+  { icon: IconFileDescription, title: "Document Converter", link: "/document" },
+  { icon: IconArchive, title: "Archive Converter", link: "/archive" },
+  { icon: IconPresentation, title: "Presentation Converter", link: "/presentation" },
+  { icon: IconTypography, title: "Font Converter", link: "/font" },
+  { icon: IconBook, title: "Ebook Converter", link: "/ebook" },
 ];
 
 export default function Header() {
@@ -83,7 +59,6 @@ export default function Header() {
       <header className={classes.header}>
         <Group justify="space-between" h="100%">
           <MantineLogo size={30} />
-
           {/* Desktop navigation */}
           <Group h="100%" gap={0} visibleFrom="sm">
             <Link href="/" className={classes.link}>
@@ -96,19 +71,18 @@ export default function Header() {
               openDelay={100}
               closeDelay={200}
               shadow="md"
-              width={300}
+              width={400}
             >
               <Menu.Target>
                 <UnstyledButton className={classes.link}>
                   <Center inline>
                     <Box component="span" mr={5}>
-                      Features
+                      Converter
                     </Box>
-                    <IconChevronDown size={16} color={theme.colors.blue[6]} />
+                    <IconChevronDown size={16} color={theme.colors.red[6]} />
                   </Center>
                 </UnstyledButton>
               </Menu.Target>
-
               <Menu.Dropdown>
                 {mockdata.map((item) => (
                   <Menu.Item
@@ -116,16 +90,13 @@ export default function Header() {
                     component={Link}
                     href={item.link}
                     leftSection={
-                      <ThemeIcon size={34} variant="default" radius="md">
-                        <item.icon size={22} color={theme.colors.blue[6]} />
+                      <ThemeIcon size={34} variant="filled" color="white" radius="md">
+                        <item.icon size={22}  color="#e03131" />
                       </ThemeIcon>
                     }
                   >
                     <Text size="sm" fw={500}>
                       {item.title}
-                    </Text>
-                    <Text size="xs" c="dimmed">
-                      {item.description}
                     </Text>
                   </Menu.Item>
                 ))}
@@ -145,8 +116,8 @@ export default function Header() {
             <Button variant="default" onClick={toggleLogin}>
               Log in
             </Button>
-            <Button >
-             <Link href="/SingUp"> Sing Up</Link>
+            <Button>
+              <Link href="/SingUp"> Sign Up</Link>
             </Button>
           </Group>
 
@@ -179,7 +150,7 @@ export default function Header() {
           <UnstyledButton className={classes.link} onClick={toggleMobileFeatures}>
             <Center inline>
               <Box component="span" mr={5}>
-                Features
+                Converter
               </Box>
               <IconChevronDown
                 size={16}
@@ -208,9 +179,6 @@ export default function Header() {
                     <Text size="sm" fw={500}>
                       {item.title}
                     </Text>
-                    <Text size="xs" c="dimmed">
-                      {item.description}
-                    </Text>
                   </div>
                 </Group>
               </UnstyledButton>
@@ -229,10 +197,7 @@ export default function Header() {
             <Button variant="default" onClick={toggleLogin}>
               Log in
             </Button>
-            <Link href="/SingUp"> 
-              Sign up
-            </Link>
-            
+            <Link href="/SingUp"> Sign up</Link>
           </Group>
         </ScrollArea>
       </Drawer>
