@@ -1,11 +1,10 @@
-  import {Converter,Features} from "./importexport.js";
+ import  Feature  from "./Components/Features/Features";
 
   export default function Home() {
   return (
     <>
-
-    <Converter/>
-    <Features/>
+ <Feature/>
+     
     </>
   );
 }
